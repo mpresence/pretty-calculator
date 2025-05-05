@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pretty Calculator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="calculator-container">
+        <h1>Pretty Calculator</h1>
+        
+        <div class="calculator">
+            <div class="display">
+                <div class="expression" id="expression"></div>
+                <div class="result" id="result">0</div>
+            </div>
+            
+            <div class="toggle-container">
+                <button id="toggleMode">Rad/Deg</button>
+                <span id="modeIndicator">RAD</span>
+            </div>
+            
+            <div class="buttons">
+                <div class="row">
+                    <button class="function memory-clear" id="mClear">MC</button>
+                    <button class="function memory-recall" id="mRecall">MR</button>
+                    <button class="function memory-add" id="mAdd">M+</button>
+                    <button class="function memory-subtract" id="mSubtract">M-</button>
+                    <button class="function clear-all" id="clearAll">AC</button>
+                </div>
+                
+                <div class="row">
+                    <button class="function" id="sin">sin</button>
+                    <button class="function" id="cos">cos</button>
+                    <button class="function" id="tan">tan</button>
+                    <button class="operator" id="power">x<sup>y</sup></button>
+                    <button class="clear" id="clear">C</button>
+                </div>
+                
+                <div class="row">
+                    <button class="function" id="log">log</button>
+                    <button class="function" id="ln">ln</button>
+                    <button class="function" id="sqrt">√</button>
+                    <button class="function" id="factorial">!</button>
+                    <button class="operator" id="divide">÷</button>
+                </div>
+                
+                <div class="row">
+                    <button class="number" id="7">7</button>
+                    <button class="number" id="8">8</button>
+                    <button class="number" id="9">9</button>
+                    <button class="operator" id="multiply">×</button>
+                </div>
+                
+                <div class="row">
+                    <button class="number" id="4">4</button>
+                    <button class="number" id="5">5</button>
+                    <button class="number" id="6">6</button>
+                    <button class="operator" id="subtract">-</button>
+                </div>
+                
+                <div class="row">
+                    <button class="number" id="1">1</button>
+                    <button class="number" id="2">2</button>
+                    <button class="number" id="3">3</button>
+                    <button class="operator" id="add">+</button>
+                </div>
+                
+                <div class="row">
+                    <button class="number" id="0">0</button>
+                    <button class="decimal" id="decimal">.</button>
+                    <button class="constant" id="pi">π</button>
+                    <button class="equals" id="equals">=</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="history-container">
+            <h2>History</h2>
+            <div class="history-list" id="historyList"></div>
+            <button class="clear-history" id="clearHistory">Clear History</button>
+        </div>
+    </div>
+    
+    <script src="{{ url_for('static', filename='js/calculator.js') }}"></script>
+</body>
+</html>
